@@ -45,7 +45,6 @@ public class RetrofitCallsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_retrofitcalls);
         ButterKnife.bind(this);
         init();
-        /*sample*/
     }
 
     private void init()
