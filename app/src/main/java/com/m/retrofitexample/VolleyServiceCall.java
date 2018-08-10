@@ -1,6 +1,7 @@
 package com.m.retrofitexample;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.android.volley.AuthFailureError;
@@ -77,7 +78,7 @@ public class VolleyServiceCall {
     }
 
 
-    public static void uploadBitmap(final Activity activity,final String url, final String file_key,final Bitmap bitmap, final Map<String, String> params,final ServiceResponse serviceResponse)
+    public static void uploadBitmap(final Context context, final String url, final String file_key, final Bitmap bitmap, final Map<String, String> params, final ServiceResponse serviceResponse)
     {
         //our custom volley request
         VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, url,
@@ -124,7 +125,7 @@ public class VolleyServiceCall {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-        RequestQueue requestQueue = Volley.newRequestQueue(activity);
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(volleyMultipartRequest);
     }
 
