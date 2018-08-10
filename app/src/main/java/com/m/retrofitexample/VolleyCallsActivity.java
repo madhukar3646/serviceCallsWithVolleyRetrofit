@@ -76,7 +76,7 @@ public class VolleyCallsActivity extends AppCompatActivity {
 
     private void getServiceFunction()
     {
-         VolleyServiceCall.executeServiceCall(VolleyCallsActivity.this, VolleyServiceCall.GET,AppConstants.BASE_URL+"getcuisines",new HashMap<String,String>(),new HashMap<String,String>(),new VolleyServiceCall.ServiceResponse(){
+         VolleyServiceCall.executeServiceCall(this, VolleyServiceCall.GET,AppConstants.BASE_URL+"getcuisines",new HashMap<String,String>(),new HashMap<String,String>(),new VolleyServiceCall.ServiceResponse(){
 
              @Override
              public void getResponse(String response) {
@@ -102,7 +102,7 @@ public class VolleyCallsActivity extends AppCompatActivity {
         Map<String,String> header_params=new HashMap<>();
         Map<String,String> params=new HashMap<>();
         params.put("user_id","4");
-        VolleyServiceCall.executeServiceCall(VolleyCallsActivity.this, VolleyServiceCall.POST,AppConstants.BASE_URL+"userProfile",header_params,params,new VolleyServiceCall.ServiceResponse(){
+        VolleyServiceCall.executeServiceCall(this, VolleyServiceCall.POST,AppConstants.BASE_URL+"userProfile",header_params,params,new VolleyServiceCall.ServiceResponse(){
 
             @Override
             public void getResponse(String response) {
@@ -124,7 +124,7 @@ public class VolleyCallsActivity extends AppCompatActivity {
         Bitmap bitmap= BitmapFactory.decodeFile(path);
         Map<String,String> params=new HashMap<>();
         //params.put("user_id","4");
-        VolleyServiceCall.uploadBitmap(VolleyCallsActivity.this, AppConstants.BASE_URL+"eventImage", "image", bitmap, params, new VolleyServiceCall.ServiceResponse() {
+        VolleyServiceCall.uploadBitmap(this, AppConstants.BASE_URL+"eventImage", "image", bitmap, params, new VolleyServiceCall.ServiceResponse() {
             @Override
             public void getResponse(String response) {
 
